@@ -1,0 +1,53 @@
+<!--
+@author Aimé
+@email 
+@create date 2021-01-27 03:30:57
+@modify date 2021-01-27 03:30:57
+@desc [description]
+-->
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Home Automation Basic</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="hab.css">
+</head>
+<body>
+    <div class="outer-wrapper">
+        <div class="inner-wrapper">
+            <header>
+                <p>HAB</p>
+                <p>Home</p>
+            </header>
+            <button type="button" onclick=logout() class="button">Logout</button>
+            <input type="checkbox" onclick=speakers() class="switch-checkbox" id="speakersCheckbox">
+            <div class="switch-container">
+                <label>SPEAKERS</label>
+                <div class=switch>
+                    <label class=switch-label for=speakersCheckbox>
+                        <span class=switch-inner></span>
+                        <span class=switch-switch></span>
+                    </label>
+                </div>
+            </div>
+            <input type=checkbox onclick=lightSwitch() class="switch-checkbox" id=lightSwitchCheckbox>
+            <div class="switch-container">
+                <label>LIGHT</label>
+                <div class=switch>
+                    <label class=switch-label for=lightSwitchCheckbox>
+                        <span class=switch-inner></span>
+                        <span class=switch-switch></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="SSE.js"></script>
+    <script> 
+    </script>
+</body>
+
+</html>

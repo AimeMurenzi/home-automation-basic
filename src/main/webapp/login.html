@@ -1,0 +1,51 @@
+<!--
+@author Aimé
+@email 
+@create date 2021-01-27 10:32:42
+@modify date 2021-01-27 10:32:42
+@desc [description]
+-->
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - Home Automation Basic</title> 
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="hab.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="outer-wrapper">
+        <div class="inner-wrapper">
+            <header>
+                <p>HAB</p>
+                <p>Login</p>
+            </header>
+            <form class="helper" action="j_security_check" method="post">
+                <button id="toggle-theme-button" class="button" type="button">Toggle Theme</button>
+                <div class="item">
+                    <label>Username</label>
+                    <input id="j_username" name="j_username" type="text" maxlength="254" placeholder="username"
+                        autocomplete="on">
+                </div>
+                <div class="item">
+                    <label>Password</label>
+                    <input id="j_password" name="j_password" type="text" maxlength="254" placeholder="password"
+                        autocomplete="on">
+                </div>
+                <div>
+                    <input class="button" name="action" type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script> 
+        let toggleThemeButton = document.getElementById("toggle-theme-button")
+        toggleThemeButton.addEventListener("click", function () {
+            document.body.classList.toggle("dark-theme"); 
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+/**
+ * @author Aimé
+ * @email 
+ * @create date 2021-02-03 02:28:21
+ * @modify date 2021-02-03 02:28:21
+ * @desc [description]
+ */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	--onBoxShadowColor: #d4ff00;
+	--btn-bkg-color: #0054a4;
+	--btn-frg-color: #eee;
+	--txt-color: #eee;
+	--bkg-color: #121212;
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--bkg-color);
+	color: var(--txt-color);
+	font-weight: bold;
+	font-family: Helvetica, Arial, Sans-serif;
+	font-size: 1em;
+}
+html,
+body,
+ul,
+p,
+header,
+form,
+div {
+	margin: 0;
+	padding: 0;
+}
+body.light-theme {
+	--txt-color: #eee;
+	--bkg-color: #121212;
+}
+body.dark-theme {
+	--txt-color: #222;
+	--bkg-color: #eee;
+}
+header {
+	background: linear-gradient(-45deg, rgba(220, 223, 231, 0.1), rgba(246, 246, 246, 0.1));
+	margin-bottom: 0.5em;
+	padding: 1em;
+}
+ul {
+	list-style-type: none;
+}
+
+p {
+	display: block;
+	color: var(--btn-bkg-color);
+	font-size: 20px;
+	text-align: center;
+}
+input[type=text] {
+	width: 100%;
+	padding: 0.5em;
+	border: 1px solid var(--txt-color);
+	border-radius: 4px;
+	resize: vertical;
+}
+a {
+	cursor: pointer;
+}
+
+/* ==================== FORM */
+form {
+	padding: 0.5em;
+	background: linear-gradient(-45deg, rgba(220, 223, 231, 0.1), rgba(246, 246, 246, 0.1));
+}
+.item {
+	margin: 5px auto 5px auto;
+}
+.item > * {
+	border: none;
+}
+:focus {
+	outline-color: unset;
+	outline-style: unset;
+	outline-width: 1px;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		--txt-color: #eee;
+		--bkg-color: #121212;
+	}
+	body.light-theme {
+		--txt-color: #222;
+		--bkg-color: #fff;
+	}
+}
+.outer-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100%;
+	background-color: var(--bkg-color);
+}
+/* ==================== SWITCH */
+.switch-container {
+	background-color: #ffffff17;
+	padding: 20px;
+	border-radius: 0 30px 5px 5px;
+	margin-top: 45px;
+	transition: all .3s ease-in 0s;
+
+	box-shadow: inset 0 0 50px #414141, inset 20px 0 80px #94b300, inset -20px 0 80px #7f9900,
+		inset 20px 0 300px #6a8000, inset -20px 0 300px #556600, 0 0 50px #595959;
+}
+
+.switch-container > label {
+	margin-left: 20px;
+	display: block;
+}
+
+.switch {
+	position: relative;
+	width: 161px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.switch-checkbox {
+	display: none;
+}
+
+.switch-label {
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+	border-radius: 20px;
+}
+
+.switch-inner {
+	display: block;
+	width: 200%;
+	margin-left: -100%;
+	transition: margin .3s ease-in 0s;
+}
+
+.switch-inner:before,
+.switch-inner:after {
+	display: block;
+	float: left;
+	width: 50%;
+	height: 57px;
+	padding: 0;
+	line-height: 57px;
+	font-size: 31px;
+	color: white;
+	font-family: Trebuchet, Arial, sans-serif;
+	font-weight: bold;
+	box-sizing: border-box;
+}
+
+.switch-inner:before {
+	content: "ON";
+	padding-left: 21px;
+	background-color: var(--onBoxShadowColor);
+	color: #000000;
+}
+
+.switch-inner:after {
+	content: "OFF";
+	padding-right: 21px;
+	background-color: #556600;
+	color: #121212;
+	text-align: right;
+}
+
+.switch-switch {
+	display: block;
+	width: 46px;
+	margin: 5.5px;
+	background: #12121299;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 100px;
+	border-radius: 20px;
+	transition: all .3s ease-in 0s;
+}
+
+.switch-checkbox:checked + .switch-container .switch-label .switch-inner {
+	margin-left: 0;
+}
+
+.switch-checkbox:checked + .switch-container {
+	box-shadow: inset 0 0 50px #d4ff00, inset 20px 0 80px #94b300, inset -20px 0 80px #7f9900,
+		inset 20px 0 300px #6a8000, inset -20px 0 300px #556600, 0 0 50px #d4ff00; 
+	transition: all .3s ease-in 0s; 
+}
+
+.switch-checkbox:checked + .switch-container .switch-label .switch-switch {
+	right: 0;
+} 
+.button {
+	background-color: var(--btn-bkg-color);
+	color: var(--btn-frg-color);
+	border-radius: 2px;
+	padding: 1em;
+	cursor: pointer;
+	border: none;
+	width: 100%;
+	font-weight: inherit;
+	font-size: inherit;
+}
